@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96921C8A6947001583AD /* AppDelegate.swift */; };
+		B54F96951C8A6947001583AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96941C8A6947001583AD /* ViewController.swift */; };
+		B54F96981C8A6947001583AD /* ForteTeeVee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */; };
+		B54F969B1C8A6947001583AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54F96991C8A6947001583AD /* Main.storyboard */; };
+		B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54F969C1C8A6948001583AD /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B54F968F1C8A6947001583AD /* ForteTeeVee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForteTeeVee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54F96921C8A6947001583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B54F96941C8A6947001583AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForteTeeVee.xcdatamodel; sourceTree = "<group>"; };
+		B54F969A1C8A6947001583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B54F969C1C8A6948001583AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B54F969E1C8A6948001583AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B54F968C1C8A6947001583AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B54F96861C8A6947001583AD = {
+			isa = PBXGroup;
+			children = (
+				B54F96911C8A6947001583AD /* ForteTeeVee */,
+				B54F96901C8A6947001583AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B54F96901C8A6947001583AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B54F968F1C8A6947001583AD /* ForteTeeVee.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B54F96911C8A6947001583AD /* ForteTeeVee */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96921C8A6947001583AD /* AppDelegate.swift */,
+				B54F96941C8A6947001583AD /* ViewController.swift */,
+				B54F96991C8A6947001583AD /* Main.storyboard */,
+				B54F969C1C8A6948001583AD /* Assets.xcassets */,
+				B54F969E1C8A6948001583AD /* Info.plist */,
+				B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */,
+			);
+			path = ForteTeeVee;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B54F968E1C8A6947001583AD /* ForteTeeVee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54F96A11C8A6948001583AD /* Build configuration list for PBXNativeTarget "ForteTeeVee" */;
+			buildPhases = (
+				B54F968B1C8A6947001583AD /* Sources */,
+				B54F968C1C8A6947001583AD /* Frameworks */,
+				B54F968D1C8A6947001583AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForteTeeVee;
+			productName = ForteTeeVee;
+			productReference = B54F968F1C8A6947001583AD /* ForteTeeVee.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B54F96871C8A6947001583AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Brendon McKinley";
+				TargetAttributes = {
+					B54F968E1C8A6947001583AD = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B54F968A1C8A6947001583AD /* Build configuration list for PBXProject "ForteTeeVee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B54F96861C8A6947001583AD;
+			productRefGroup = B54F96901C8A6947001583AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B54F968E1C8A6947001583AD /* ForteTeeVee */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B54F968D1C8A6947001583AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */,
+				B54F969B1C8A6947001583AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B54F968B1C8A6947001583AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54F96981C8A6947001583AD /* ForteTeeVee.xcdatamodeld in Sources */,
+				B54F96951C8A6947001583AD /* ViewController.swift in Sources */,
+				B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B54F96991C8A6947001583AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B54F969A1C8A6947001583AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B54F969F1C8A6948001583AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		B54F96A01C8A6948001583AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B54F96A21C8A6948001583AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ForteTeeVee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.2d-space.ForteTeeVee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B54F96A31C8A6948001583AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ForteTeeVee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.2d-space.ForteTeeVee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B54F968A1C8A6947001583AD /* Build configuration list for PBXProject "ForteTeeVee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54F969F1C8A6948001583AD /* Debug */,
+				B54F96A01C8A6948001583AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54F96A11C8A6948001583AD /* Build configuration list for PBXNativeTarget "ForteTeeVee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54F96A21C8A6948001583AD /* Debug */,
+				B54F96A31C8A6948001583AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */,
+			);
+			currentVersion = B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */;
+			path = ForteTeeVee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B54F96871C8A6947001583AD /* Project object */;
+}
