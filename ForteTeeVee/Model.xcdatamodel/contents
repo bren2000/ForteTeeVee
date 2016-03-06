@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10147" systemVersion="15D21" minimumToolsVersion="Xcode 4.3">
+    <entity name="Page" representedClassName=".Page" syncable="YES">
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="score" maxCount="1" deletionRule="Nullify" destinationEntity="Score" inverseName="pages" inverseEntity="Score" syncable="YES"/>
+    </entity>
+    <entity name="Score" representedClassName=".Score" syncable="YES">
+        <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="publisher" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Page" inverseName="score" inverseEntity="Page" syncable="YES"/>
+        <fetchedProperty name="orderedPages" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Page" predicateString="score = $FETCH_SOURCE"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Page" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Score" positionX="-425" positionY="-89" width="128" height="179"/>
+    </elements>
+</model>

@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96921C8A6947001583AD /* AppDelegate.swift */; };
-		B54F96951C8A6947001583AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96941C8A6947001583AD /* ViewController.swift */; };
-		B54F96981C8A6947001583AD /* ForteTeeVee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */; };
 		B54F969B1C8A6947001583AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54F96991C8A6947001583AD /* Main.storyboard */; };
 		B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54F969C1C8A6948001583AD /* Assets.xcassets */; };
+		B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A51C8AA361001583AD /* TimelineViewController.swift */; };
+		B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */; };
+		B54F96AC1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */; };
+		B54F96AF1C8AB983001583AD /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AE1C8AB983001583AD /* Candy.swift */; };
+		B54F96B41C8AC48A001583AD /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B11C8AC48A001583AD /* Page.swift */; };
+		B54F96B51C8AC48A001583AD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B21C8AC48A001583AD /* Score.swift */; };
+		B54F96B61C8AC48A001583AD /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B31C8AC48A001583AD /* Model.xcdatamodel */; };
+		B54F96BA1C8AC4A4001583AD /* NLAOpenArchiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B71C8AC4A4001583AD /* NLAOpenArchiveController.swift */; };
+		B54F96BB1C8AC4A4001583AD /* NLAItemInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B81C8AC4A4001583AD /* NLAItemInformation.swift */; };
+		B54F96BC1C8AC4A4001583AD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B91C8AC4A4001583AD /* DataController.swift */; };
+		B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96BE1C8AD757001583AD /* ScoreCell.swift */; };
+		B54F96C31C8BF0D0001583AD /* data2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B54F96C21C8BC86A001583AD /* data2.sqlite */; };
+		B9DAE50500AE17023E2F6DED /* Pods_ForteTeeVee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68C65505D4932AA96B6314DB /* Pods-ForteTeeVee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.debug.xcconfig"; sourceTree = "<group>"; };
 		B54F968F1C8A6947001583AD /* ForteTeeVee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForteTeeVee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54F96921C8A6947001583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B54F96941C8A6947001583AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForteTeeVee.xcdatamodel; sourceTree = "<group>"; };
 		B54F969A1C8A6947001583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B54F969C1C8A6948001583AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54F969E1C8A6948001583AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54F96A51C8AA361001583AD /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewController.swift; sourceTree = "<group>"; };
+		B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeScoreCollectionViewController.swift; sourceTree = "<group>"; };
+		B54F96AE1C8AB983001583AD /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		B54F96B11C8AC48A001583AD /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		B54F96B21C8AC48A001583AD /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		B54F96B31C8AC48A001583AD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B54F96B71C8AC4A4001583AD /* NLAOpenArchiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAOpenArchiveController.swift; sourceTree = "<group>"; };
+		B54F96B81C8AC4A4001583AD /* NLAItemInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAItemInformation.swift; sourceTree = "<group>"; };
+		B54F96B91C8AC4A4001583AD /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		B54F96BE1C8AD757001583AD /* ScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		B54F96C21C8BC86A001583AD /* data2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data2.sqlite; sourceTree = "<group>"; };
+		C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForteTeeVee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18E699FFB794AFDA5C206D9 /* Pods-ForteTeeVee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DAE50500AE17023E2F6DED /* Pods_ForteTeeVee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41D9D8B19D832E110FD640CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86ECEF1FD610F0FF543B868C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68C65505D4932AA96B6314DB /* Pods-ForteTeeVee.debug.xcconfig */,
+				F18E699FFB794AFDA5C206D9 /* Pods-ForteTeeVee.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B54F96861C8A6947001583AD = {
 			isa = PBXGroup;
 			children = (
 				B54F96911C8A6947001583AD /* ForteTeeVee */,
 				B54F96901C8A6947001583AD /* Products */,
+				86ECEF1FD610F0FF543B868C /* Pods */,
+				41D9D8B19D832E110FD640CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +98,64 @@
 		B54F96911C8A6947001583AD /* ForteTeeVee */ = {
 			isa = PBXGroup;
 			children = (
-				B54F96921C8A6947001583AD /* AppDelegate.swift */,
-				B54F96941C8A6947001583AD /* ViewController.swift */,
 				B54F96991C8A6947001583AD /* Main.storyboard */,
-				B54F969C1C8A6948001583AD /* Assets.xcassets */,
-				B54F969E1C8A6948001583AD /* Info.plist */,
-				B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */,
+				B54F96BD1C8AC4A8001583AD /* Other controllers */,
+				B54F96C01C8AD75C001583AD /* Views */,
+				B54F96AD1C8AB891001583AD /* View controllers */,
+				B54F96C11C8AD8DB001583AD /* Models */,
+				B54F96A41C8A6FAC001583AD /* Supporting files */,
 			);
 			path = ForteTeeVee;
+			sourceTree = "<group>";
+		};
+		B54F96A41C8A6FAC001583AD /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96921C8A6947001583AD /* AppDelegate.swift */,
+				B54F969C1C8A6948001583AD /* Assets.xcassets */,
+				B54F969E1C8A6948001583AD /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		B54F96AD1C8AB891001583AD /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */,
+				B54F96A51C8AA361001583AD /* TimelineViewController.swift */,
+				B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */,
+				B54F96AE1C8AB983001583AD /* Candy.swift */,
+				B54F96BE1C8AD757001583AD /* ScoreCell.swift */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		B54F96BD1C8AC4A8001583AD /* Other controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96B71C8AC4A4001583AD /* NLAOpenArchiveController.swift */,
+				B54F96B81C8AC4A4001583AD /* NLAItemInformation.swift */,
+				B54F96B91C8AC4A4001583AD /* DataController.swift */,
+			);
+			name = "Other controllers";
+			sourceTree = "<group>";
+		};
+		B54F96C01C8AD75C001583AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B54F96C11C8AD8DB001583AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96C21C8BC86A001583AD /* data2.sqlite */,
+				B54F96B11C8AC48A001583AD /* Page.swift */,
+				B54F96B21C8AC48A001583AD /* Score.swift */,
+				B54F96B31C8AC48A001583AD /* Model.xcdatamodel */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B54F96A11C8A6948001583AD /* Build configuration list for PBXNativeTarget "ForteTeeVee" */;
 			buildPhases = (
+				440EB8D9B51AD8935DDEFC19 /* Check Pods Manifest.lock */,
 				B54F968B1C8A6947001583AD /* Sources */,
 				B54F968C1C8A6947001583AD /* Frameworks */,
 				B54F968D1C8A6947001583AD /* Resources */,
+				C62ECA5AC8DD323E3D0CC259 /* Embed Pods Frameworks */,
+				FD41DC83C33294DFB7CD1718 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,19 +221,77 @@
 			files = (
 				B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */,
 				B54F969B1C8A6947001583AD /* Main.storyboard in Resources */,
+				B54F96C31C8BF0D0001583AD /* data2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		440EB8D9B51AD8935DDEFC19 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C62ECA5AC8DD323E3D0CC259 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD41DC83C33294DFB7CD1718 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B54F968B1C8A6947001583AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54F96981C8A6947001583AD /* ForteTeeVee.xcdatamodeld in Sources */,
-				B54F96951C8A6947001583AD /* ViewController.swift in Sources */,
+				B54F96BC1C8AC4A4001583AD /* DataController.swift in Sources */,
+				B54F96B51C8AC48A001583AD /* Score.swift in Sources */,
+				B54F96AF1C8AB983001583AD /* Candy.swift in Sources */,
+				B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */,
+				B54F96B41C8AC48A001583AD /* Page.swift in Sources */,
+				B54F96BA1C8AC4A4001583AD /* NLAOpenArchiveController.swift in Sources */,
+				B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */,
 				B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */,
+				B54F96B61C8AC48A001583AD /* Model.xcdatamodel in Sources */,
+				B54F96AC1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift in Sources */,
+				B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */,
+				B54F96BB1C8AC4A4001583AD /* NLAItemInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +394,7 @@
 		};
 		B54F96A21C8A6948001583AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68C65505D4932AA96B6314DB /* Pods-ForteTeeVee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -246,11 +402,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.2d-space.ForteTeeVee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
 		};
 		B54F96A31C8A6948001583AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18E699FFB794AFDA5C206D9 /* Pods-ForteTeeVee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -258,6 +416,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.2d-space.ForteTeeVee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
 		};
@@ -280,21 +439,9 @@
 				B54F96A31C8A6948001583AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B54F96961C8A6947001583AD /* ForteTeeVee.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */,
-			);
-			currentVersion = B54F96971C8A6947001583AD /* ForteTeeVee.xcdatamodel */;
-			path = ForteTeeVee.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B54F96871C8A6947001583AD /* Project object */;
 }
