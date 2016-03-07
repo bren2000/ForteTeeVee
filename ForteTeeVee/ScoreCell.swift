@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Haneke
+import Haneke
 
 class ScoreCell: UICollectionViewCell {
 
@@ -53,11 +53,11 @@ class ScoreCell: UICollectionViewCell {
             // update the details of the score
             // TODO: Add reachability checks
             //noteImageView.hidden = true
-            //imageView.hnk_setImageFromURL(score!.thumbnailURL()!)
+            imageView.hnk_setImageFromURL(score!.thumbnailURL()!)
             
             //let url = NSURL(string: score!.thumbnailURL()!)
-            let data = NSData(contentsOfURL: score!.thumbnailURL()!)
-            imageView.image = UIImage(data: data!)
+            //let data = NSData(contentsOfURL: score!.thumbnailURL()!)
+            //imageView.image = UIImage(data: data!)
             
             //titleLabel.text = score?.title
             
