@@ -103,6 +103,22 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
         return Score()
     }
     
+    //MARK: Collection View Methods
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+         layout collectionViewLayout: UICollectionViewLayout,
+                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 50.0, bottom: 0.0, right: 50.0)
+    }
+    
     //MARK: - UICollectionView Data Source Methods
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
