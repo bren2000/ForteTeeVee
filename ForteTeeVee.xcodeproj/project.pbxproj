@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52A69961C8D869B00E9BB01 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */; };
 		B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96921C8A6947001583AD /* AppDelegate.swift */; };
 		B54F969B1C8A6947001583AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54F96991C8A6947001583AD /* Main.storyboard */; };
 		B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54F969C1C8A6948001583AD /* Assets.xcassets */; };
 		B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A51C8AA361001583AD /* TimelineViewController.swift */; };
 		B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */; };
 		B54F96AC1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */; };
-		B54F96AF1C8AB983001583AD /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AE1C8AB983001583AD /* Candy.swift */; };
 		B54F96B41C8AC48A001583AD /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B11C8AC48A001583AD /* Page.swift */; };
 		B54F96B51C8AC48A001583AD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B21C8AC48A001583AD /* Score.swift */; };
 		B54F96B61C8AC48A001583AD /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B54F96B31C8AC48A001583AD /* Model.xcdatamodel */; };
@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		68C65505D4932AA96B6314DB /* Pods-ForteTeeVee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.debug.xcconfig"; sourceTree = "<group>"; };
+		B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		B54F968F1C8A6947001583AD /* ForteTeeVee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForteTeeVee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54F96921C8A6947001583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54F969A1C8A6947001583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		B54F96A51C8AA361001583AD /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewController.swift; sourceTree = "<group>"; };
 		B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecadeScoreCollectionViewController.swift; sourceTree = "<group>"; };
-		B54F96AE1C8AB983001583AD /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
 		B54F96B11C8AC48A001583AD /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		B54F96B21C8AC48A001583AD /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		B54F96B31C8AC48A001583AD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -124,8 +124,7 @@
 				B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */,
 				B54F96A51C8AA361001583AD /* TimelineViewController.swift */,
 				B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */,
-				B54F96AE1C8AB983001583AD /* Candy.swift */,
-				B54F96BE1C8AD757001583AD /* ScoreCell.swift */,
+				B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -143,6 +142,7 @@
 		B54F96C01C8AD75C001583AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B54F96BE1C8AD757001583AD /* ScoreCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,7 +282,6 @@
 			files = (
 				B54F96BC1C8AC4A4001583AD /* DataController.swift in Sources */,
 				B54F96B51C8AC48A001583AD /* Score.swift in Sources */,
-				B54F96AF1C8AB983001583AD /* Candy.swift in Sources */,
 				B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */,
 				B54F96B41C8AC48A001583AD /* Page.swift in Sources */,
 				B54F96BA1C8AC4A4001583AD /* NLAOpenArchiveController.swift in Sources */,
@@ -292,6 +291,7 @@
 				B54F96AC1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift in Sources */,
 				B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */,
 				B54F96BB1C8AC4A4001583AD /* NLAItemInformation.swift in Sources */,
+				B52A69961C8D869B00E9BB01 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
