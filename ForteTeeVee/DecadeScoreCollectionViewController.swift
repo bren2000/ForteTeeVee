@@ -13,7 +13,6 @@ class DecadeScoreCollectionViewController: ScoreCollectionViewController {
     let kShowComposersSegueIdentifier = "ShowComposers"
     
     dynamic var decade: String?
-    var composersPopover: UIPopoverController?
     var composersSegmentIndex: Int?
     var composersIndexPath: NSIndexPath?
     var composer:String?
@@ -59,7 +58,6 @@ class DecadeScoreCollectionViewController: ScoreCollectionViewController {
                 return dataController!.numberOfScoresInDecade(decade!, byComposer: composer!)
             }
             else {
-                print("number of scores in decade = \(dataController!.numberOfScoresInDecade(decade!))")
                 return dataController!.numberOfScoresInDecade(decade!)
             }
         }

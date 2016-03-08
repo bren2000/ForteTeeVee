@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-Vk-WI9">
-                                <rect key="frame" x="0.0" y="0.0" width="1245" height="1080"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-Vk-WI9">
+                                <rect key="frame" x="20" y="0.0" width="1245" height="1080"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9yb-QX-yhP">
                                     <size key="itemSize" width="226" height="320"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,8 +33,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="226" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-tb-llw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="226" height="340"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-tb-llw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="226" height="320"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -62,39 +62,75 @@
                     <navigationItem key="navigationItem" id="1YC-Lx-eeG"/>
                     <connections>
                         <outlet property="collectionView" destination="zxX-Vk-WI9" id="2wN-nU-H8W"/>
+                        <segue destination="NQ9-Pq-V9P" kind="presentation" identifier="OpenScoreSegue" id="3vH-ux-q6z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yv6-PA-vbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7783.5" y="-3221"/>
         </scene>
+        <!--Score page view controller-->
+        <scene sceneID="1cc-dR-68a">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NQ9-Pq-V9P" userLabel="Score page view controller" customClass="ScoreViewController" customModule="ForteTeeVee" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Title" id="e2T-oF-bDd"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-uQ-H5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7773" y="-1918"/>
+        </scene>
+        <!--Score Page View Controller-->
+        <scene sceneID="e4m-32-76l">
+            <objects>
+                <viewController storyboardIdentifier="ScorePageViewController" id="V32-hx-rCK" customClass="ScorePageViewController" customModule="ForteTeeVee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vvO-7S-yTp"/>
+                        <viewControllerLayoutGuide type="bottom" id="hre-jQ-DJV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xMr-jA-IcV">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="GNc-qP-BUq">
+                                <rect key="frame" x="20" y="20" width="1880" height="1040"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hre-jQ-DJV" firstAttribute="top" secondItem="GNc-qP-BUq" secondAttribute="bottom" constant="20" id="2KT-Qd-76T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GNc-qP-BUq" secondAttribute="trailing" id="INx-GR-hnR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GNc-qP-BUq" secondAttribute="trailing" id="Llf-df-6I4"/>
+                            <constraint firstItem="GNc-qP-BUq" firstAttribute="top" secondItem="vvO-7S-yTp" secondAttribute="bottom" constant="20" id="Pq2-g6-b4n"/>
+                            <constraint firstItem="GNc-qP-BUq" firstAttribute="leading" secondItem="xMr-jA-IcV" secondAttribute="leadingMargin" id="bVw-c8-4ms"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="GNc-qP-BUq" id="1yF-Nn-YND"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eOX-dS-WVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5701" y="-1940"/>
+        </scene>
         <!--Timeline View Controller-->
         <scene sceneID="zJv-hl-XCs">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="nOA-u7-kAd" customClass="TimelineViewController" customModule="ForteTeeVee" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="40" sectionFooterHeight="40" id="gsV-Or-2GB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="gsV-Or-2GB">
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="re8-w2-WrZ" detailTextLabel="wfv-kA-UpS" style="IBUITableViewCellStyleSubtitle" id="M7v-VD-zTh">
-                                <rect key="frame" x="0.0" y="199" width="594" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="re8-w2-WrZ" style="IBUITableViewCellStyleDefault" id="M7v-VD-zTh">
+                                <rect key="frame" x="0.0" y="199" width="634" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7v-VD-zTh" id="DKD-B8-hOR">
-                                    <rect key="frame" x="0.0" y="0.0" width="618" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="618" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="re8-w2-WrZ">
-                                            <rect key="frame" x="20" y="4" width="72" height="46"/>
+                                            <rect key="frame" x="20" y="0.0" width="578" height="66"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wfv-kA-UpS">
-                                            <rect key="frame" x="20" y="50" width="128" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -167,6 +203,9 @@
             <point key="canvasLocation" x="-9196.5" y="-3221"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="score_placeholder" width="768" height="1004"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="z6V-ES-lvg"/>
     </inferredMetricsTieBreakers>

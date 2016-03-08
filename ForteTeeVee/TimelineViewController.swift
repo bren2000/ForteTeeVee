@@ -69,7 +69,7 @@ class TimelineViewController: UITableViewController {
         } else {
             cell.textLabel!.text = "No date"
         }
-        cell.detailTextLabel!.text = "decade"
+        //cell.detailTextLabel!.text = "decade"
         return cell
     }
     
@@ -81,10 +81,7 @@ class TimelineViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let decade = decades?[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DecadeScoreCollectionViewController
-                print("decade in timeline = \(decade!.valueForKey("date") as! String)")
                 controller.decade = decade!.valueForKey("date") as! String
-                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
-                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }

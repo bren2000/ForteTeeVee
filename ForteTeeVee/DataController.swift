@@ -75,7 +75,6 @@ class DataController: NSObject {
                 }
             }
             else {
-                //print(defaultManager.fileExistsAtPath(dataStorePath, isDirectory: &isDir))
                 print("file already exists")
             }
             do {

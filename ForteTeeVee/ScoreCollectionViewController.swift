@@ -15,6 +15,7 @@ import UIKit
  MUSDecadeScoreCollectionViewController (which manages a collection of scores published
  in a given decade).
  */
+@IBDesignable
 class ScoreCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -149,49 +150,51 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
         selectedScoreIndex = indexPath
         
         // Get the selected cell
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        //let cell = collectionView.cellForItemAtIndexPath(indexPath)
         
         // Convert the origin of the selected cell to window coordinates
-        let window = UIApplication.sharedApplication().keyWindow
-        var convertedPoint = CGPointMake((cell?.frame.origin.x)!, (cell?.frame.origin.y)! - collectionView.contentOffset.y)
+        //let window = UIApplication.sharedApplication().keyWindow
+        //var convertedPoint = CGPointMake((cell?.frame.origin.x)!, (cell?.frame.origin.y)! - collectionView.contentOffset.y)
         
         // Allow for the space that the thumbnail is inset from the cell
-        convertedPoint = CGPointMake(convertedPoint.x + CGFloat(kThumbnailHorizontalInset), convertedPoint.y + CGFloat(kThumbnailVerticalInset))
+        //convertedPoint = CGPointMake(convertedPoint.x + CGFloat(kThumbnailHorizontalInset), convertedPoint.y + CGFloat(kThumbnailVerticalInset))
         
         // Create a new image view to scale to fill the view
-        let thumbnailFrame = CGRectMake(CGFloat(convertedPoint.x), CGFloat(convertedPoint.y), CGFloat(kThumbnailWidth), CGFloat(kThumbnailHeight))
-        var coverImageView: UIImageView?
+        //let thumbnailFrame = CGRectMake(CGFloat(convertedPoint.x), CGFloat(convertedPoint.y), CGFloat(kThumbnailWidth), CGFloat(kThumbnailHeight))
+        //var coverImageView: UIImageView?
         // TODO: network images
-        coverImageView = UIImageView(frame: thumbnailFrame)
-        coverImageView?.image = UIImage(named: "score_placeholder")
-        view.addSubview(coverImageView!)
-        selectedCoverImageView = coverImageView
+        //coverImageView = UIImageView(frame: thumbnailFrame)
+        //coverImageView?.image = UIImage(named: "score_placeholder")
+        //view.addSubview(coverImageView!)
+        //selectedCoverImageView = coverImageView
         
-        UIView.animateWithDuration(kThumbnailZoomDuration,
-                                   animations: {
-                                    let windowFrame = window!.frame
-                                    coverImageView?.frame = windowFrame
-            },
-                                   completion:  {(value: Bool) in
-                                    //coverImageView setPathToNetworkImage:[self.selectedScore.coverURL absoluteString]];
-                                    self.performSegueWithIdentifier(self.kOpenScoreSegueIdentifier, sender: self)
-            }
-        )
+        self.performSegueWithIdentifier(self.kOpenScoreSegueIdentifier, sender: self)
+        
+//        UIView.animateWithDuration(kThumbnailZoomDuration,
+//                                   animations: {
+//                                    let windowFrame = window!.frame
+//                                    coverImageView?.frame = windowFrame
+//            },
+//                                   completion:  {(value: Bool) in
+//                                    //coverImageView setPathToNetworkImage:[self.selectedScore.coverURL absoluteString]];
+//                                    self.performSegueWithIdentifier(self.kOpenScoreSegueIdentifier, sender: self)
+//            }
+//        )
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let scoreController = segue.destinationViewController as? MUSScoreViewController {
-//            if let identifier = segue.identifier {
-//                switch identifier {
-//                case kOpenScoreSegueIdentifier:
-//                    scoreController.score = selectedScore!
-//                //scoreController.setInitialImage = selectedCoverImageView.image
-//                default:
-//                    break
-//                }
-//            }
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let scoreController = segue.destinationViewController as? ScoreViewController {
+            if let identifier = segue.identifier {
+                switch identifier {
+                case kOpenScoreSegueIdentifier:
+                    scoreController.score = selectedScore!
+                //scoreController.setInitialImage = selectedCoverImageView.image
+                default:
+                    break
+                }
+            }
+        }
+    }
     
 }
 
