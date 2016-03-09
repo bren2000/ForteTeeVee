@@ -159,6 +159,28 @@ class DataController: NSObject {
         }
     }
     
+    func scoreAtIndex(indexPath: NSIndexPath, searchPhrase phrase: String) ->Score {
+        let scoresFetchRequest = NSFetchRequest(entityName: "Score")
+        
+        // Sort order
+        let titleSortDescriptor = NSSortDescriptor(key: "sortTitle", ascending: true, selector: "caseInsensitiveCompare:")
+        scoresFetchRequest.sortDescriptors = [titleSortDescriptor]
+        
+        // Only get scores for the given decade and composer
+        let searchPredicate = NSPredicate(format: "publisher like %@ OR creator like %@ OR title like %@ OR composer like %@", argumentArray: [phrase, phrase, phrase, phrase])
+        scoresFetchRequest.predicate = searchPredicate
+        do {
+            let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
+            // We're caching scores for a given decade (with a given composer)
+            // so forget the previously cached scores without a given composer
+            return scores[indexPath.row]
+        } catch let error as NSError  {
+            print(error, terminator: "\n")
+            return Score()
+        }
+
+    }
+    
     /**
     Returns the score for the given index path in the given decade by the given composer.
     */

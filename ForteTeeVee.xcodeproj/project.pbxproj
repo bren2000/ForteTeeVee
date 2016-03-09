@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B52A69961C8D869B00E9BB01 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */; };
 		B52A69981C8D9A6700E9BB01 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */; };
+		B52A699A1C903B9400E9BB01 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69991C903B9400E9BB01 /* SearchResultsViewController.swift */; };
 		B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96921C8A6947001583AD /* AppDelegate.swift */; };
 		B54F969B1C8A6947001583AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54F96991C8A6947001583AD /* Main.storyboard */; };
 		B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54F969C1C8A6948001583AD /* Assets.xcassets */; };
@@ -24,13 +25,13 @@
 		B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96BE1C8AD757001583AD /* ScoreCell.swift */; };
 		B54F96C31C8BF0D0001583AD /* data2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B54F96C21C8BC86A001583AD /* data2.sqlite */; };
 		B9DAE50500AE17023E2F6DED /* Pods_ForteTeeVee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */; };
-		F5E4FB981C8FD91C00502730 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		68C65505D4932AA96B6314DB /* Pods-ForteTeeVee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.debug.xcconfig"; sourceTree = "<group>"; };
 		B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
+		B52A69991C903B9400E9BB01 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		B54F968F1C8A6947001583AD /* ForteTeeVee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForteTeeVee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54F96921C8A6947001583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54F969A1C8A6947001583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		B54F96C21C8BC86A001583AD /* data2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data2.sqlite; sourceTree = "<group>"; };
 		C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForteTeeVee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18E699FFB794AFDA5C206D9 /* Pods-ForteTeeVee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.release.xcconfig"; sourceTree = "<group>"; };
-		F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 				B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */,
 				B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */,
 				B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */,
-				F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */,
+				B52A69991C903B9400E9BB01 /* SearchResultsViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -289,9 +289,9 @@
 				B54F96BC1C8AC4A4001583AD /* DataController.swift in Sources */,
 				B54F96B51C8AC48A001583AD /* Score.swift in Sources */,
 				B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */,
-				F5E4FB981C8FD91C00502730 /* SearchResultsViewController.swift in Sources */,
 				B54F96B41C8AC48A001583AD /* Page.swift in Sources */,
 				B54F96BA1C8AC4A4001583AD /* NLAOpenArchiveController.swift in Sources */,
+				B52A699A1C903B9400E9BB01 /* SearchResultsViewController.swift in Sources */,
 				B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */,
 				B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */,
 				B54F96B61C8AC48A001583AD /* Model.xcdatamodel in Sources */,
