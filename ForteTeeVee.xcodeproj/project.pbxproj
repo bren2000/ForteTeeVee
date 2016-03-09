@@ -24,6 +24,7 @@
 		B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96BE1C8AD757001583AD /* ScoreCell.swift */; };
 		B54F96C31C8BF0D0001583AD /* data2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B54F96C21C8BC86A001583AD /* data2.sqlite */; };
 		B9DAE50500AE17023E2F6DED /* Pods_ForteTeeVee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */; };
+		F5E4FB981C8FD91C00502730 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B54F96C21C8BC86A001583AD /* data2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data2.sqlite; sourceTree = "<group>"; };
 		C83DA35A167489F58A0427F7 /* Pods_ForteTeeVee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForteTeeVee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18E699FFB794AFDA5C206D9 /* Pods-ForteTeeVee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForteTeeVee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForteTeeVee/Pods-ForteTeeVee.release.xcconfig"; sourceTree = "<group>"; };
+		F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */,
 				B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */,
 				B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */,
+				F5E4FB971C8FD91C00502730 /* SearchResultsViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				B54F96BC1C8AC4A4001583AD /* DataController.swift in Sources */,
 				B54F96B51C8AC48A001583AD /* Score.swift in Sources */,
 				B54F96AA1C8AB646001583AD /* ScoreCollectionViewController.swift in Sources */,
+				F5E4FB981C8FD91C00502730 /* SearchResultsViewController.swift in Sources */,
 				B54F96B41C8AC48A001583AD /* Page.swift in Sources */,
 				B54F96BA1C8AC4A4001583AD /* NLAOpenArchiveController.swift in Sources */,
 				B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */,
