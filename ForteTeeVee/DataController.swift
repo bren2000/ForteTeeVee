@@ -25,6 +25,8 @@ class DataController: NSObject {
     var cachedScores = [Score]()
     var decadeOfCachedScores: String?
     var cachedScoresByComposer = [Score]()
+    var cachedTerm: String?
+    var cachedSearchedScores = [Score]()
     var composerOfCachedScores:String?
     
     var favouriteScores = []
@@ -159,7 +161,15 @@ class DataController: NSObject {
         }
     }
     
+    /**
+     Returns the score for the given index path with the given phrase.
+     */
     func scoreAtIndex(indexPath: NSIndexPath, searchPhrase phrase: String) ->Score {
+        if let _ = cachedTerm {
+            if (cachedTerm == phrase) && (!cachedSearchedScores.isEmpty) {
+                return cachedSearchedScores[indexPath.row]
+            }
+        }
         let scoresFetchRequest = NSFetchRequest(entityName: "Score")
         
         // Sort order
@@ -171,9 +181,9 @@ class DataController: NSObject {
         scoresFetchRequest.predicate = searchPredicate
         do {
             let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
-            // We're caching scores for a given decade (with a given composer)
-            // so forget the previously cached scores without a given composer
-            return scores[indexPath.row]
+            cachedSearchedScores = []
+            cachedSearchedScores = scores
+            return cachedSearchedScores[indexPath.row]
         } catch let error as NSError  {
             print(error, terminator: "\n")
             return Score()
