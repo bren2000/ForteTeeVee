@@ -138,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="re8-w2-WrZ" style="IBUITableViewCellStyleDefault" id="M7v-VD-zTh">
-                                <rect key="frame" x="0.0" y="199" width="634" height="66"/>
+                                <rect key="frame" x="0.0" y="199" width="594" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7v-VD-zTh" id="DKD-B8-hOR">
                                     <rect key="frame" x="0.0" y="0.0" width="618" height="66"/>
@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="-9170" y="-4490"/>
         </scene>
-        <!--Item-->
+        <!--Split view-->
         <scene sceneID="Huj-NT-mNq">
             <objects>
-                <splitViewController id="thc-6S-ZOw" customClass="MenuSplitViewController" customModule="ForteTeeVee" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="thc-6S-ZOw" userLabel="Split view" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="k37-VI-Qdf"/>
                     <connections>
                         <segue destination="nM1-dv-NL8" kind="relationship" relationship="masterViewController" id="01d-zs-Gft"/>

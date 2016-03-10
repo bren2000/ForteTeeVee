@@ -61,7 +61,6 @@ class ScoreViewController: UIPageViewController, UIPageViewControllerDataSource 
     private func indexOfDataItemForViewController(viewController: UIViewController) -> Int {
         guard let viewController = viewController as? ScorePageViewController else { fatalError("Unexpected view controller type in page view controller.") }
         guard let viewControllerIndex = pages!.indexOf(viewController.page!) else { fatalError("View controller's data item not found.") }
-        print("view controller index = \(viewControllerIndex)")
         return viewControllerIndex
     }
     
@@ -69,17 +68,14 @@ class ScoreViewController: UIPageViewController, UIPageViewControllerDataSource 
         let page = pages![pageIndex]
         if let cachedController = scorePageViewControllerCache.objectForKey(page.identifier) as? ScorePageViewController {
             // Return the cached view controller.
-            print("returned the cached view controller")
             return cachedController
         }
         else {
             // Instantiate and configure a `ScorePageViewController`.
             guard let controller = storyboard?.instantiateViewControllerWithIdentifier(ScorePageViewController.storyboardIdentifier) as? ScorePageViewController else { fatalError("Unable to instantiate a ScorePageViewController.") }
             controller.configureWithDataItem(page)
-            print("returned the new non-cached view controller")    
             // Cache the view controller so it can be reused.
             scorePageViewControllerCache.setObject(controller, forKey: page.identifier)
-            
             // Return the newly created and cached view controller.
             return controller
         }

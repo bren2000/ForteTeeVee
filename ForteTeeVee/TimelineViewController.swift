@@ -76,7 +76,6 @@ class TimelineViewController: UITableViewController {
     
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("seg id = \(segue.identifier)")
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let decade = decades?[indexPath.row]

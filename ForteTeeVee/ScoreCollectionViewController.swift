@@ -120,6 +120,7 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
                 switch identifier {
                 case kOpenScoreSegueIdentifier:
                     scoreController.score = selectedScore!
+                    print(selectedScore!.identifier)
                 //scoreController.setInitialImage = selectedCoverImageView.image
                 default:
                     break

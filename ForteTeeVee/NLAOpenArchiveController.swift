@@ -47,6 +47,7 @@ class NLAOpenArchiveController: NSObject, NSXMLParserDelegate {
             queue = NSOperationQueue()
         }
         let urlString = "https://www.nla.gov.au/apps/oaicat/servlet/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:nla.gov.au:" + itemIdentifier
+        print(urlString)
         //var itemInfo = NLAItemInformation()
         Alamofire.request(.GET, urlString)
             .responseString { (response) in
@@ -88,8 +89,6 @@ class NLAOpenArchiveController: NSObject, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        //print("element = \(elementName): characters = \(characters)", appendNewline: true)
-        //print(" ", appendNewline: true)
         switch elementName {
         case dcElements.kTitleKey:
             itemInformation.title = characters
