@@ -177,12 +177,13 @@ class DataController: NSObject {
         scoresFetchRequest.sortDescriptors = [titleSortDescriptor]
         
         // Only get scores for the given decade and composer
-        let searchPredicate = NSPredicate(format: "publisher like %@ OR creator like %@ OR title like %@ OR composer like %@", argumentArray: [phrase, phrase, phrase, phrase])
+        let searchPredicate = NSPredicate(format: "publisher LIKE %@", argumentArray: [phrase])
         scoresFetchRequest.predicate = searchPredicate
         do {
             let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
             cachedSearchedScores = []
             cachedSearchedScores = scores
+            print(cachedSearchedScores[indexPath.row].identifier)
             return cachedSearchedScores[indexPath.row]
         } catch let error as NSError  {
             print(error, terminator: "\n")

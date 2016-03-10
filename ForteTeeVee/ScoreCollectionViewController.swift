@@ -43,15 +43,8 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
      */
     var numberOfScoresInCollection: Int?
     
-    let kScoreCellIdentifier = "ScoreCell"
-    let kOpenScoreSegueIdentifier = "OpenScoreSegue"
-    
-    let kThumbnailHorizontalInset = 51.0
-    let kThumbnailVerticalInset = 20.0
-    let kThumbnailHeight = 150.0
-    let kThumbnailWidth = 121.0
-    
-    let kThumbnailZoomDuration = 0.25
+    let ScoreCellIdentifier = "ScoreCell"
+    let OpenScoreSegueIdentifier = "OpenScoreSegue"
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -100,7 +93,7 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kScoreCellIdentifier, forIndexPath: indexPath)  as? ScoreCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ScoreCellIdentifier, forIndexPath: indexPath)  as? ScoreCell
         let score = scoreAtIndexPathInCollection(indexPath)
         cell?.score = score
         return cell!
@@ -111,14 +104,14 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedScore = scoreAtIndexPathInCollection(indexPath)
         selectedScoreIndex = indexPath
-        self.performSegueWithIdentifier(self.kOpenScoreSegueIdentifier, sender: self)
+        self.performSegueWithIdentifier(self.OpenScoreSegueIdentifier, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let scoreController = segue.destinationViewController as? ScoreViewController {
             if let identifier = segue.identifier {
                 switch identifier {
-                case kOpenScoreSegueIdentifier:
+                case OpenScoreSegueIdentifier:
                     scoreController.score = selectedScore!
                     print(selectedScore!.identifier)
                 //scoreController.setInitialImage = selectedCoverImageView.image

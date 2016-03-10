@@ -8,34 +8,11 @@
 
 import UIKit
 
-class DecadeScoreCollectionViewController: ScoreCollectionViewController, UISearchResultsUpdating {
-    
-    
-    static let storyboardIdentifier = "DecadeScoreCollectionViewController"
+class DecadeScoreCollectionViewController: ScoreCollectionViewController {
     
     dynamic var decade: String?
     
-    var filterString = "" {
-        didSet {
-        // Return if the filter string hasn't changed.
-        guard filterString != oldValue else { return }
-        
-        // Apply the filter or show all items if the filter string is empty.
-        if filterString.isEmpty {
-            //filteredDataItems = allDataItems
-        }
-        else {
-            //filteredDataItems = allDataItems.filter { $0.title.localizedStandardContainsString(filterString) }
-            //return (dataController?.scoreAtIndex(indexPath, inDecade: decade!))!
-        }
-        
-        // Reload the collection view to reflect the changes.
-        collectionView?.reloadData()
-        }
-    }
-    
     // MARK - Overridden Methods
-    
     
     override func viewDidLoad() {
         addObserver(self, forKeyPath: "decade", options: NSKeyValueObservingOptions.New, context: nil)
@@ -77,12 +54,6 @@ class DecadeScoreCollectionViewController: ScoreCollectionViewController, UISear
     
     override func scoreAtIndexPathInCollection(indexPath: NSIndexPath) -> Score {
         return (dataController?.scoreAtIndex(indexPath, inDecade: decade!))!
-    }
-    
-    // MARK: UISearchResultsUpdating
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterString = searchController.searchBar.text ?? ""
     }
     
     // MARK: - KVO

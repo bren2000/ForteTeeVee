@@ -8,67 +8,115 @@
 
 import UIKit
 
-//class SearchResultsViewController: UICollectionViewController, UISearchResultsUpdating {
-//    // MARK: Properties
-//    
-//    static let storyboardIdentifier = "SearchResultsViewController"
-//    
-//    private let cellComposer = DataItemCellComposer()
-//    
-//    private let allDataItems = DataItem.sampleItems
-//    
-//    private var filteredDataItems = DataItem.sampleItems
-//    
-//    var filterString = "" {
-//        didSet {
-//        // Return if the filter string hasn't changed.
-//        guard filterString != oldValue else { return }
-//        
-//        // Apply the filter or show all items if the filter string is empty.
-//        if filterString.isEmpty {
-//            filteredDataItems = allDataItems
-//        }
-//        else {
-//            filteredDataItems = allDataItems.filter { $0.title.localizedStandardContainsString(filterString) }
-//        }
-//        
-//        // Reload the collection view to reflect the changes.
-//        collectionView?.reloadData()
-//        }
-//    }
-//    
-//    // MARK: UICollectionViewDataSource
-//    
-//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    
-//    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return filteredDataItems.count
-//    }
-//    
-//    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        // Dequeue a cell from the collection view.
-//        return collectionView.dequeueReusableCellWithReuseIdentifier(DataItemCollectionViewCell.reuseIdentifier, forIndexPath: indexPath)
-//    }
-//    
-//    // MARK: UICollectionViewDelegate
-//    
-//    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-//        guard let cell = cell as? DataItemCollectionViewCell else { fatalError("Expected to display a `DataItemCollectionViewCell`.") }
-//        let item = filteredDataItems[indexPath.row]
-//        
-//        // Configure the cell.
-//        cellComposer.composeCell(cell, withDataItem: item)
-//    }
-//    
-//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-//    
-//    // MARK: UISearchResultsUpdating
-//    
-//    func updateSearchResultsForSearchController(searchController: UISearchController) {
-//        filterString = searchController.searchBar.text ?? ""
-//    }
-//}
+class SearchResultsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate , UISearchResultsUpdating {
+    
+    static let storyboardIdentifier = "SearchResultsViewController"
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let ScoreCellIdentifier = "ScoreCell"
+    let OpenScoreSegueIdentifier = "OpenScoreSegue"
+    
+    var dataController: DataController?
+    var selectedScoreIndex: NSIndexPath?
+    var selectedScore: Score?
+    
+    var decade: String? = "1890"
+    
+    var filterString = "" {
+        didSet {
+        print("did change")
+        // Return if the filter string hasn't changed.
+        guard filterString != oldValue else { return }
+        print("did change YES")
+        collectionView!.reloadData()
+        }
+    }
+    
+    override func viewDidLoad() {
+        dataController = DataController.sharedController
+        collectionView!.delegate = self
+        collectionView!.dataSource = self
+        print("search view controller did load")
+    }
+    
+    
+    //MARK: Collection View Methods
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 50.0, bottom: 0.0, right: 50.0)
+    }
+    
+    //MARK: - UICollectionView Data Source Methods
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard (numberOfScoresInCollection != nil) else {
+            return 0
+        }
+        return numberOfScoresInCollection!
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ScoreCellIdentifier, forIndexPath: indexPath)  as? ScoreCell
+        let score = scoreAtIndexPathInCollection(indexPath)
+        cell?.score = score
+        return cell!
+    }
+    
+    //MARK: - UICollectionView Delegate Methods
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        selectedScore = scoreAtIndexPathInCollection(indexPath)
+        selectedScoreIndex = indexPath
+        self.performSegueWithIdentifier(self.OpenScoreSegueIdentifier, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let scoreController = segue.destinationViewController as? ScoreViewController {
+            if let identifier = segue.identifier {
+                switch identifier {
+                case OpenScoreSegueIdentifier:
+                    scoreController.score = selectedScore!
+                    print(selectedScore!.identifier)
+                //scoreController.setInitialImage = selectedCoverImageView.image
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
+    var numberOfScoresInCollection: Int? {
+        get {
+            guard let _ = decade else {
+                return 0
+            }
+            return dataController!.numberOfScoresInDecade(decade!)
+        }
+        set {
+            self.numberOfScoresInCollection = newValue
+        }
+    }
+    
+    func scoreAtIndexPathInCollection(indexPath: NSIndexPath) -> Score {
+        print("score at index path in collection")
+        return (dataController?.scoreAtIndex(indexPath, searchPhrase: filterString))!
+    }
+    
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterString = searchController.searchBar.text ?? ""
+        print(filterString)
+    }
+
+    
+}
