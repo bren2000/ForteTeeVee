@@ -20,8 +20,6 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    //@IBOutlet weak var collectionView: UICollectionView!
-    
     
     var dataController: DataController?
     var selectedScoreIndex: NSIndexPath?
@@ -114,7 +112,6 @@ class ScoreCollectionViewController: UIViewController, UICollectionViewDataSourc
                 case OpenScoreSegueIdentifier:
                     scoreController.score = selectedScore!
                     print(selectedScore!.identifier)
-                //scoreController.setInitialImage = selectedCoverImageView.image
                 default:
                     break
                 }

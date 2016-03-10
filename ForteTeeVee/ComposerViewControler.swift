@@ -22,26 +22,26 @@
 
 import UIKit
 
-class TimelineViewController: UITableViewController {
+class ComposerViewController: UITableViewController {
     
     // MARK: - Properties
     var decadeScoreCollectionController: DecadeScoreCollectionViewController? = nil
     
     var dataController: DataController?
-    var selectedDecade: String?
+    var selectedComposer: String?
     
     private var lastPerformedSegueIdentifier: String?
     private let delayedSeguesOperationQueue = NSOperationQueue()
     private static let performSegueDelay: NSTimeInterval = 0.01
     
-    var decades: [AnyObject]?
+    var composers: [AnyObject]?
     
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.remembersLastFocusedIndexPath = true
         dataController = DataController.sharedController
-        decades = dataController?.decadesInWhichMusicWasPublished()
+        composers = dataController?.composersWithMusicPublishedIn("")
         if let splitViewController = splitViewController {
             let controllers = splitViewController.viewControllers
             decadeScoreCollectionController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DecadeScoreCollectionViewController
@@ -63,21 +63,16 @@ class TimelineViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (decades?.count)!
+        return (composers?.count)!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let decade = decades?[indexPath.row]
-        if let d = decade!.valueForKey("date") {
-            if (d as! String == "") {
-                cell.textLabel!.text = "No date recorder"
-            } else {
-                cell.textLabel!.text = decade!.valueForKey("date") as! String
-            }
-            
+        let composer = composers?[indexPath.row]
+        if let _ = composer!.valueForKey("creator") {
+            cell.textLabel!.text = composer!.valueForKey("creator") as? String
         } else {
-            cell.textLabel!.text = "No date recorded"
+            cell.textLabel!.text = "No name"
         }
         //cell.detailTextLabel!.text = "decade"
         return cell
@@ -103,7 +98,7 @@ class TimelineViewController: UITableViewController {
         
         performSegueOperation.addExecutionBlock { [weak self, unowned performSegueOperation] in
             // Pause the block so the segue isn't immediately performed.
-            NSThread.sleepForTimeInterval(TimelineViewController.performSegueDelay)
+            NSThread.sleepForTimeInterval(ComposerViewController.performSegueDelay)
             
             /*
              Check that the operation wasn't cancelled and that the segue identifier
@@ -129,17 +124,17 @@ class TimelineViewController: UITableViewController {
         
         delayedSeguesOperationQueue.addOperation(performSegueOperation)
     }
-
+    
     
     
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("prep for seg")
+        print("prep for seg with \(segue.identifier)")
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let decade = decades?[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DecadeScoreCollectionViewController
-                controller.decade = decade!.valueForKey("date") as! String
+                let composer = composers?[indexPath.row]
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! ComposerScoreViewCollectionController
+                controller.composer = composer!.valueForKey("creator") as? String
             }
         }
     }

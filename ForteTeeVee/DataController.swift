@@ -214,7 +214,14 @@ class DataController: NSObject {
         scoresFetchRequest.sortDescriptors = [titleSortDescriptor]
         
          // Only get scores for the given decade and composer
-        let decadePredicate = NSPredicate(format: "date == %@ AND creator == %@", argumentArray: [decade, composer])
+        var dateFormat: String
+        let decadePredicate: NSPredicate
+        if (decade == "") {
+            dateFormat = ""
+            decadePredicate = NSPredicate(format: "creator == %@", argumentArray: [composer])
+        } else {
+            decadePredicate = NSPredicate(format: "date == %@ AND creator == %@", argumentArray: [decade, composer])
+        }
         scoresFetchRequest.predicate = decadePredicate
         do {
             let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
@@ -339,15 +346,20 @@ class DataController: NSObject {
         expressionDescription.expression = countExpression
         expressionDescription.expressionResultType = NSAttributeType.Integer32AttributeType
         
-        let decadeAndComposerPredicate = NSPredicate(format: "date == %@ AND creator == %@", argumentArray: [decade, composer])
+        let decadeAndComposerPredicate: NSPredicate
+        if (decade == "") {
+            decadeAndComposerPredicate = NSPredicate(format: "creator == %@", argumentArray: [composer])
+        } else {
+            decadeAndComposerPredicate = NSPredicate(format: "date == %@ AND creator == %@", argumentArray: [decade, composer])
+        }
         
-        fetchrequest.propertiesToFetch = [dateAttributeDescription, expressionDescription, composerAttributeDescription]
-        fetchrequest.propertiesToGroupBy = [dateAttributeDescription, composerAttributeDescription]
+        fetchrequest.propertiesToFetch = [expressionDescription, composerAttributeDescription]
+        fetchrequest.propertiesToGroupBy = [composerAttributeDescription]
         fetchrequest.resultType = NSFetchRequestResultType.DictionaryResultType
         fetchrequest.predicate = decadeAndComposerPredicate
         
-        let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchrequest.sortDescriptors = [dateSortDescriptor]
+        //let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        //fetchrequest.sortDescriptors = [dateSortDescriptor]
         
         let results: [AnyObject]?
         do {
@@ -363,6 +375,7 @@ class DataController: NSObject {
         let count: Int = resultDict?.valueForKey("count") as! Int
         
         //return count
+        print("data thing count = \(count)")
         return count
     }
     
