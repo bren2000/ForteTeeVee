@@ -10,6 +10,7 @@
 		B52A69961C8D869B00E9BB01 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */; };
 		B52A69981C8D9A6700E9BB01 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */; };
 		B52A699A1C903B9400E9BB01 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A69991C903B9400E9BB01 /* SearchResultsViewController.swift */; };
+		B52A699C1C91885200E9BB01 /* MenuSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A699B1C91885200E9BB01 /* MenuSplitViewController.swift */; };
 		B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96921C8A6947001583AD /* AppDelegate.swift */; };
 		B54F969B1C8A6947001583AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54F96991C8A6947001583AD /* Main.storyboard */; };
 		B54F969D1C8A6948001583AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54F969C1C8A6948001583AD /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		B52A69951C8D869B00E9BB01 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		B52A69971C8D9A6700E9BB01 /* ScorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
 		B52A69991C903B9400E9BB01 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		B52A699B1C91885200E9BB01 /* MenuSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSplitViewController.swift; sourceTree = "<group>"; };
 		B54F968F1C8A6947001583AD /* ForteTeeVee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForteTeeVee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54F96921C8A6947001583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54F969A1C8A6947001583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		B54F96AD1C8AB891001583AD /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B52A699B1C91885200E9BB01 /* MenuSplitViewController.swift */,
 				B54F96A51C8AA361001583AD /* TimelineViewController.swift */,
 				B54F96A91C8AB646001583AD /* ScoreCollectionViewController.swift */,
 				B54F96AB1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift */,
@@ -295,6 +298,7 @@
 				B54F96A61C8AA361001583AD /* TimelineViewController.swift in Sources */,
 				B54F96931C8A6947001583AD /* AppDelegate.swift in Sources */,
 				B54F96B61C8AC48A001583AD /* Model.xcdatamodel in Sources */,
+				B52A699C1C91885200E9BB01 /* MenuSplitViewController.swift in Sources */,
 				B54F96AC1C8AB6AB001583AD /* DecadeScoreCollectionViewController.swift in Sources */,
 				B52A69981C8D9A6700E9BB01 /* ScorePageViewController.swift in Sources */,
 				B54F96BF1C8AD757001583AD /* ScoreCell.swift in Sources */,

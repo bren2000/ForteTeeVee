@@ -28,7 +28,6 @@ class SearchResultsViewController: UIViewController, UICollectionViewDataSource,
         print("did change")
         // Return if the filter string hasn't changed.
         guard filterString != oldValue else { return }
-        print("did change YES")
         collectionView!.reloadData()
         }
     }
@@ -58,16 +57,19 @@ class SearchResultsViewController: UIViewController, UICollectionViewDataSource,
     //MARK: - UICollectionView Data Source Methods
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard (numberOfScoresInCollection != nil) else {
-            return 0
+        if let number = dataController?.numberOfScoreForSearch(forPhrase: filterString) {
+            return number
         }
-        return numberOfScoresInCollection!
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ScoreCellIdentifier, forIndexPath: indexPath)  as? ScoreCell
-        let score = scoreAtIndexPathInCollection(indexPath)
-        cell?.score = score
+        if let score = scoreAtIndexPathInCollection(indexPath) {
+            cell?.score = score
+            return cell!
+        }
+        cell?.score = Score()
         return cell!
     }
     
@@ -85,8 +87,6 @@ class SearchResultsViewController: UIViewController, UICollectionViewDataSource,
                 switch identifier {
                 case OpenScoreSegueIdentifier:
                     scoreController.score = selectedScore!
-                    print(selectedScore!.identifier)
-                //scoreController.setInitialImage = selectedCoverImageView.image
                 default:
                     break
                 }
@@ -94,21 +94,9 @@ class SearchResultsViewController: UIViewController, UICollectionViewDataSource,
         }
     }
     
-    var numberOfScoresInCollection: Int? {
-        get {
-            guard let _ = decade else {
-                return 0
-            }
-            return dataController!.numberOfScoresInDecade(decade!)
-        }
-        set {
-            self.numberOfScoresInCollection = newValue
-        }
-    }
-    
-    func scoreAtIndexPathInCollection(indexPath: NSIndexPath) -> Score {
+    func scoreAtIndexPathInCollection(indexPath: NSIndexPath) -> Score? {
         print("score at index path in collection")
-        return (dataController?.scoreAtIndex(indexPath, searchPhrase: filterString))!
+        return dataController?.scoreAtIndex(indexPath, searchPhrase: filterString)
     }
     
     // MARK: UISearchResultsUpdating

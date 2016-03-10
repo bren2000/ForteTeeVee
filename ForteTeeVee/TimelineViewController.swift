@@ -30,11 +30,16 @@ class TimelineViewController: UITableViewController {
     var dataController: DataController?
     var selectedDecade: String?
     
+    private var lastPerformedSegueIdentifier: String?
+    private let delayedSeguesOperationQueue = NSOperationQueue()
+    private static let performSegueDelay: NSTimeInterval = 0.01
+    
     var decades: [AnyObject]?
     
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.remembersLastFocusedIndexPath = true
         dataController = DataController.sharedController
         decades = dataController?.decadesInWhichMusicWasPublished()
         if let splitViewController = splitViewController {
@@ -73,9 +78,58 @@ class TimelineViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let menuSplitViewController = splitViewController as? MenuSplitViewController else { return }
+        menuSplitViewController.updateFocusToDetailViewController()
+    }
+    
+    override func tableView(tableView: UITableView, didUpdateFocusInContext context: UITableViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        // Check that the next focus view is a child of the table view.
+        guard let nextFocusedView = context.nextFocusedView where nextFocusedView.isDescendantOfView(tableView) else { return }
+        guard let indexPath = context.nextFocusedIndexPath else { return }
+        print("we got here")
+        
+        // Cancel any previously queued segues.
+        delayedSeguesOperationQueue.cancelAllOperations()
+        
+        // Create an `NSBlockOperation` to perform the detail segue after a delay.
+        let performSegueOperation = NSBlockOperation()
+        let segueIdentifier = "showDetail"
+        
+        performSegueOperation.addExecutionBlock { [weak self, unowned performSegueOperation] in
+            // Pause the block so the segue isn't immediately performed.
+            NSThread.sleepForTimeInterval(TimelineViewController.performSegueDelay)
+            
+            /*
+             Check that the operation wasn't cancelled and that the segue identifier
+             is different to the last performed segue identifier.
+             */
+            guard !performSegueOperation.cancelled else { return }
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                // Perform the segue to show the detail view controller.
+                print("pref seg")
+                self?.performSegueWithIdentifier(segueIdentifier, sender: nextFocusedView)
+                
+                // Record the last performed segue identifier.
+                self?.lastPerformedSegueIdentifier = segueIdentifier
+                
+                /*
+                 Select the focused cell so that the table view visibly reflects
+                 which detail view is being shown.
+                 */
+                self?.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+            }
+        }
+        
+        delayedSeguesOperationQueue.addOperation(performSegueOperation)
+    }
+
+    
     
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("prep for seg")
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let decade = decades?[indexPath.row]

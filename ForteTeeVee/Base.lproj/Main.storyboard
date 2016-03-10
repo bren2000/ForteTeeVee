@@ -192,8 +192,8 @@
         <!--Split view-->
         <scene sceneID="Huj-NT-mNq">
             <objects>
-                <splitViewController id="thc-6S-ZOw" userLabel="Split view" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="k37-VI-Qdf"/>
+                <splitViewController title="Browse by decade" id="thc-6S-ZOw" userLabel="Split view" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse by decade" id="k37-VI-Qdf"/>
                     <connections>
                         <segue destination="nM1-dv-NL8" kind="relationship" relationship="masterViewController" id="01d-zs-Gft"/>
                         <segue destination="DOL-hG-1iv" kind="relationship" relationship="detailViewController" id="1o6-w4-3xJ"/>
@@ -254,11 +254,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="dCC-bh-sJ0" id="fCk-8G-D9f"/>
+                        <segue destination="NQ9-Pq-V9P" kind="presentation" identifier="OpenScoreSegue" id="jK1-aX-mSv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWy-Ws-dNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11182" y="-1366"/>
+            <point key="canvasLocation" x="-11107" y="-1940"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9zn-zt-HLm">
@@ -284,5 +285,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1o6-w4-3xJ"/>
+        <segue reference="jK1-aX-mSv"/>
     </inferredMetricsTieBreakers>
 </document>

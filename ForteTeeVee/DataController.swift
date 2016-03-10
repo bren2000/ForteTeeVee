@@ -26,8 +26,9 @@ class DataController: NSObject {
     var decadeOfCachedScores: String?
     var cachedScoresByComposer = [Score]()
     var cachedTerm: String?
-    var cachedSearchedScores = [Score]()
+    var cachedSearchedScores = [Score]?()
     var composerOfCachedScores:String?
+    var cachedNumberOfResultsForSearchTerm: Int?
     
     var favouriteScores = []
     
@@ -164,10 +165,10 @@ class DataController: NSObject {
     /**
      Returns the score for the given index path with the given phrase.
      */
-    func scoreAtIndex(indexPath: NSIndexPath, searchPhrase phrase: String) ->Score {
-        if let _ = cachedTerm {
-            if (cachedTerm == phrase) && (!cachedSearchedScores.isEmpty) {
-                return cachedSearchedScores[indexPath.row]
+    func scoreAtIndex(indexPath: NSIndexPath, searchPhrase phrase: String) -> Score? {
+        if (cachedTerm == phrase) {
+            if  let _ = cachedSearchedScores {
+                return cachedSearchedScores?[indexPath.row]
             }
         }
         let scoresFetchRequest = NSFetchRequest(entityName: "Score")
@@ -175,19 +176,22 @@ class DataController: NSObject {
         // Sort order
         let titleSortDescriptor = NSSortDescriptor(key: "sortTitle", ascending: true, selector: "caseInsensitiveCompare:")
         scoresFetchRequest.sortDescriptors = [titleSortDescriptor]
-        
-        // Only get scores for the given decade and composer
-        let searchPredicate = NSPredicate(format: "publisher LIKE %@", argumentArray: [phrase])
+    
+        let searchPredicate = NSPredicate(format: "title contains %@", argumentArray: [phrase])
+        print(searchPredicate.description)
         scoresFetchRequest.predicate = searchPredicate
         do {
             let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
+            cachedNumberOfResultsForSearchTerm = scores.count
             cachedSearchedScores = []
             cachedSearchedScores = scores
-            print(cachedSearchedScores[indexPath.row].identifier)
-            return cachedSearchedScores[indexPath.row]
+            if (cachedSearchedScores != nil) {
+                return cachedSearchedScores?[indexPath.row]
+            }
+            return nil
         } catch let error as NSError  {
             print(error, terminator: "\n")
-            return Score()
+            return nil
         }
 
     }
@@ -225,6 +229,34 @@ class DataController: NSObject {
             print(error, terminator: "\n")
             return Score()
         }
+    }
+    
+// MARK: - Search results
+    func numberOfScoreForSearch(forPhrase phrase: String) -> Int {
+        if let _ = cachedTerm {
+            if  let _ = cachedNumberOfResultsForSearchTerm {
+                return cachedNumberOfResultsForSearchTerm!
+            }
+        }
+        let scoresFetchRequest = NSFetchRequest(entityName: "Score")
+        
+        // Sort order
+        let titleSortDescriptor = NSSortDescriptor(key: "sortTitle", ascending: true, selector: "caseInsensitiveCompare:")
+        scoresFetchRequest.sortDescriptors = [titleSortDescriptor]
+        
+        let searchPredicate = NSPredicate(format: "title contains %@", argumentArray: [phrase])
+        print(searchPredicate.description)
+        scoresFetchRequest.predicate = searchPredicate
+        do {
+            let scores = try context!.executeFetchRequest(scoresFetchRequest) as! [Score]
+            cachedNumberOfResultsForSearchTerm = scores.count
+            cachedSearchedScores = scores
+            return scores.count
+        } catch let error as NSError  {
+            print(error, terminator: "\n")
+            return 0
+        }
+
     }
     
 // MARK: - Decades
